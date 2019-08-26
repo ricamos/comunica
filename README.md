@@ -21,6 +21,7 @@ app.py - Exemplos de utilização do aplicativo.
 O arquivo app.py mostra exemplos de como utilizar a aplicação.
 
 ## Licensing <a name="licensing"></a>
+Ler arquivo [LICENSE](https://github.com/ricamos/comunica/blob/master/LICENSE)
 
 ## Authors <a name="author"></a>
 Ricardo Coelho
@@ -28,6 +29,7 @@ Ricardo Coelho
 ## Acknowledgements <a name="ack"></a>
 
 Object-oriented programming syntax
+
 		classes, objects, methods and attributes
 		magic methods
 		inheritance
