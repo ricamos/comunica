@@ -9,23 +9,33 @@ import sys
 
 class Mail():
 
-	def __init__(self, remetente, destinatario, assunto, mensagem, anexo, servidor, username, senha):
-		self.remetente = remetente
+	#  remetente, destinatario, assunto, mensagem, anexo, servidor, username, senha):
+	'''self.remetente = remetente
 		self.destinatario = destinatario
 		self.assunto = assunto
 		self.mensagem = mensagem
 		self.anexo = anexo
 		self.servidor = servidor
 		self.username = username
-		self.senha = senha
+		self.senha = senha'''
+
+	def __init__(self, servidor, port = 587):
+		self.servidor = servidor
+		self.port = port
+		self.smtpObj = smtplib.SMTP(servidor, port) # Configura servidor
 		
-	#def mail_smtp(self):
-	#	print ("desenv")
-		
+	def test_connection(self):	
+		# Hello teste de conexão
+		try:
+			if self.smtpObj.ehlo()[0] == 250: 
+				print("Requested mail action okay, completed")
+		except:
+			error = str (sys.exc_info()) 
+			print (error)
+
 	def mail_smtp_ttl(self):
 		try:
-			smtpObj = smtplib.SMTP(self.servidor, 587)
-			smtpObj.ehlo()	# Hello teste de conexão
+			#smtpObj.ehlo()	# Hello teste de conexão
 			smtpObj.starttls()
 			smtpObj.login(self.username, self.senha)
 			smtpObj.sendmail(self.remetente, self.destinatario, 'Subject:'+self.assunto+'\n'+self.mensagem)
@@ -44,4 +54,4 @@ class Mail():
 			
 			if error == "<class 'smtplib.SMTPAuthenticationError'>" :
 				print ("Verifique a senha. \nNo caso do Gmail verifique a opção Allow less apps")
-		
+	
