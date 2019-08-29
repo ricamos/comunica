@@ -33,19 +33,19 @@ class Mail():
 			error = str (sys.exc_info()) 
 			print (error)
 
-	def mail_smtp_ttl(self):
+	def mail_smtp_ttl(self, username, senha, remetente, destinatario, assunto, mensagem):
 		try:
 			#smtpObj.ehlo()	# Hello teste de conexão
-			smtpObj.starttls()
-			smtpObj.login(self.username, self.senha)
-			smtpObj.sendmail(self.remetente, self.destinatario, 'Subject:'+self.assunto+'\n'+self.mensagem)
+			self.smtpObj.starttls()
+			self.smtpObj.login(username, senha)
+			self.smtpObj.sendmail(remetente, destinatario, 'Subject:'+assunto+'\n'+mensagem)
 			{}
-			smtpObj.quit()
+			self.smtpObj.quit()
 			
 			print ("Mensagem eviada com sucesso!!!")
 		
 		except:
-			error = str (sys.exc_info()[0]) 
+			error = str (sys.exc_info()) 
 			print("Deculpe! Alguma coisa deu errado ao tentar enviar email!")
 			print (error)
 			
