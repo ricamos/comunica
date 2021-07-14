@@ -1,13 +1,13 @@
 from comunica import Mail 
 
-remetente = "ricardo.rcj@gmail.com"
-destinatario = "ricardo.rcj@gmail.com"
+remetente = "remetente@gmail.com"
+destinatario = "destino@gmail.com"
 assunto = "Teste de email"
 mensagem = "Teste de envio de email"
 anexo = ""
 servidor = "smtp.gmail.com"
-username = "ricardo.rcj@gmail.com"
-senha = "S@muelC0e1hoS4"
+username = "user@gmail.com"
+senha = "xxxxxxx"
 
 config =Mail(remetente, destinatario, assunto, mensagem, anexo, servidor, username, senha)
 
